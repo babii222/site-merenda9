@@ -1,0 +1,427 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f3f7f5;
+    color: #263b32;
+}
+
+.topo {
+    background: linear-gradient(120deg, #087c59, #10a878);
+    color: white;
+    padding: 22px 7%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 15px #0001;
+}
+
+.logo {
+    background: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+}
+
+.topo h1 {
+    font-size: 23px;
+}
+
+.topo p {
+    font-size: 12px;
+    opacity: .9;
+}
+
+.sair {
+    margin-left: auto;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    padding: 9px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+main {
+    width: 90%;
+    max-width: 1150px;
+    margin: 35px auto;
+    min-height: 70vh;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.login-card {
+    background: white;
+    padding: 35px;
+    width: 100%;
+    max-width: 440px;
+    border-radius: 22px;
+    box-shadow: 0 10px 35px #0000000d;
+}
+
+.emoji {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-card h2 {
+    text-align: center;
+    font-size: 27px;
+}
+
+.login-card > p {
+    text-align: center;
+    color: #83938a;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 15px 0 7px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dce6e0;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    background: white;
+    outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #0da875;
+    box-shadow: 0 0 0 3px #0da87518;
+}
+
+.botao {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 11px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    transition: .2s;
+    font-size: 14px;
+}
+
+.botao:hover {
+    transform: translateY(-2px);
+    filter: brightness(.96);
+}
+
+.principal {
+    width: 100%;
+    background: #0a9869;
+    color: white;
+    margin-top: 20px;
+}
+
+.secundario {
+    background: #e3f5ed;
+    color: #087c59;
+    margin-top: 20px;
+}
+
+.aviso {
+    background: #edfaf3;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 11px !important;
+    color: #398467 !important;
+}
+
+.boas-vindas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 25px;
+    border-radius: 17px;
+    box-shadow: 0 5px 20px #00000008;
+}
+
+.boas-vindas h2 {
+    font-size: 22px;
+}
+
+.boas-vindas p {
+    font-size: 13px;
+    color: #7b8b82;
+}
+
+.data {
+    background: #eaf8f1;
+    color: #087c59;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.titulo-secao {
+    margin: 35px 0 18px;
+}
+
+.titulo-secao h2 {
+    font-size: 21px;
+}
+
+.titulo-secao p {
+    font-size: 13px;
+    color: #84928a;
+}
+
+.cardapio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.refeicao {
+    background: white;
+    padding: 25px;
+    border-radius: 17px;
+    border: 1px solid #e7eee9;
+    transition: .2s;
+}
+
+.refeicao:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px #0000000b;
+}
+
+.refeicao.destaque {
+    border: 2px solid #13a875;
+}
+
+.refeicao-icone {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.refeicao h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.refeicao p {
+    font-size: 13px;
+    color: #718278;
+    line-height: 1.8;
+}
+
+.respostas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.pergunta {
+    background: white;
+    padding: 23px;
+    border-radius: 15px;
+    border: 1px solid #e5eee8;
+}
+
+.pergunta h3 {
+    font-size: 17px;
+}
+
+.pergunta > p, .repetir p {
+    font-size: 13px;
+    color: #84928a;
+    margin: 8px 0;
+}
+
+.opcoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.opcoes label {
+    background: #f0f8f3;
+    padding: 10px;
+    border-radius: 9px;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.opcoes input {
+    width: auto;
+    accent-color: #0a9869;
+}
+
+.repetir {
+    border-top: 1px solid #e9efeb;
+    margin-top: 17px;
+    padding-top: 10px;
+}
+
+.salvar {
+    max-width: 400px;
+    display: block;
+    margin: 25px auto;
+}
+
+.mensagem {
+    text-align: center;
+    color: #078653;
+    font-weight: 600;
+}
+
+.painel-numeros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.numero-card {
+    background: white;
+    padding: 22px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #00000008;
+}
+
+.numero-card span {
+    font-size: 27px;
+}
+
+.numero-card p {
+    font-size: 12px;
+    color: #7d8b83;
+    margin: 8px 0;
+}
+
+.numero-card h2 {
+    font-size: 35px;
+}
+
+.numero-card small {
+    color: #87948d;
+}
+
+.azul { border-bottom: 4px solid #4199e9; }
+.verde { border-bottom: 4px solid #10a875; }
+.laranja { border-bottom: 4px solid #f2a442; }
+.roxo { border-bottom: 4px solid #9470d8; }
+
+.tabela-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 15px;
+    padding: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+    font-size: 12px;
+}
+
+th {
+    background: #eaf7f0;
+    color: #087c59;
+    padding: 15px 10px;
+    text-align: left;
+}
+
+td {
+    padding: 13px 10px;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.editar-cardapio {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+textarea {
+    min-height: 75px;
+    resize: vertical;
+}
+
+footer {
+    background: #087c59;
+    text-align: center;
+    color: white;
+    padding: 25px;
+    font-size: 13px;
+}
+
+footer small {
+    opacity: .8;
+}
+
+@media(max-width: 750px) {
+    .cardapio {
+        grid-template-columns: 1fr;
+    }
+
+    .painel-numeros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .respostas {
+        grid-template-columns: 1fr;
+    }
+
+    .boas-vindas {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    main {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .login-card {
+        padding: 23px;
+    }
+
+    .topo {
+        padding: 17px 4%;
+    }
+
+    .topo h1 {
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 380px) {
+    .painel-numeros {
+        grid-template-columns: 1fr;
+    }
+}

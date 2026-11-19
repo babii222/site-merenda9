@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merenda Escolar | Educar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="topo">
+    <div class="logo">🍎</div>
+    <div>
+        <h1>Merenda Escolar</h1>
+        <p>Sistema de alimentação escolar</p>
+    </div>
+    <button id="sair" class="sair" onclick="sair()" hidden>Sair</button>
+</header>
+
+<main>
+
+    <!-- LOGIN -->
+    <section id="login" class="login-container">
+        <div class="login-card">
+            <div class="emoji">🏫</div>
+            <h2>Bem-vindo!</h2>
+            <p>Entre para consultar a merenda da escola.</p>
+
+            <form id="formLogin">
+                <label>Seu nome completo</label>
+                <input id="nome" placeholder="Digite seu nome" required>
+
+                <label>E-mail escolar</label>
+                <input id="email" type="email"
+                       placeholder="seunome@educar"
+                       required>
+
+                <label>Como deseja entrar?</label>
+                <select id="tipo">
+                    <option value="aluno">Sou aluno(a)</option>
+                    <option value="cozinha">Sou da cozinha (tia)</option>
+                </select>
+
+                <div id="campoTurma">
+                    <label>Sua turma</label>
+                    <select id="turma">
+                        <option value="">Selecione sua turma</option>
+                        <option>101</option>
+                        <option>102</option>
+                        <option>103</option>
+                        <option>201</option>
+                        <option>202</option>
+                        <option>203</option>
+                        <option>301</option>
+                        <option>302</option>
+                    </select>
+                </div>
+
+                <div id="campoSenha" hidden>
+                    <label>Senha da cozinha</label>
+                    <input id="senhaCozinha" type="password"
+                           placeholder="Senha de acesso">
+                </div>
+
+                <button class="botao principal" type="submit">
+                    Entrar no sistema →
+                </button>
+            </form>
+            <p class="aviso">💚 Sua resposta ajuda as tias a preparar a quantidade certa de comida!</p>
+        </div>
+    </section>
+
+    <!-- ÁREA DO ALUNO -->
+    <section id="areaAluno" hidden>
+        <div class="boas-vindas">
+            <div>
+                <h2>Olá, <span id="nomeAluno"></span>! 👋</h2>
+                <p>Turma <strong id="turmaAluno"></strong> · Vamos escolher sua merenda?</p>
+            </div>
+            <div class="data" id="dataHoje"></div>
+        </div>
+
+        <div class="titulo-secao">
+            <h2>🍽️ Cardápio de hoje</h2>
+            <p>Confira o que teremos na escola.</p>
+        </div>
+
+        <div class="cardapio">
+            <div class="refeicao">
+                <div class="refeicao-icone">☕</div>
+                <h3>Café da manhã</h3>
+                <p id="menuCafe"></p>
+            </div>
+
+            <div class="refeicao destaque">
+                <div class="refeicao-icone">🍛</div>
+                <h3>Almoço</h3>
+                <p id="menuAlmoco"></p>
+            </div>
+
+            <div class="refeicao">
+                <div class="refeicao-icone">🥪</div>
+                <h3>Lanche da tarde</h3>
+                <p id="menuLanche"></p>
+            </div>
+        </div>
+
+        <div class="titulo-secao">
+            <h2>📝 Informe sua merenda</h2>
+            <p>Marque suas escolhas para hoje.</p>
+        </div>
+
+        <div class="respostas">
+            <div class="pergunta">
+                <h3>☕ Café da manhã</h3>
+                <p>Você vai tomar café da manhã?</p>
+                <div class="opcoes">
+                    <label><input type="radio" name="cafe" value="sim"> Sim, vou comer</label>
+                    <label><input type="radio" name="cafe" value="nao"> Não vou comer</label>
+                </div>
+            </div>
+
+            <div class="pergunta">
+                <h3>🍛 Almoço</h3>
+                <p>Você vai almoçar na escola?</p>
+                <div class="opcoes">
+                    <label><input type="radio" name="almoco" value="sim"> Sim, vou almoçar</label>
+                    <label><input type="radio" name="almoco" value="nao"> Não vou almoçar</label>
+                </div>
+
+                <div class="repetir">
+                    <p>Você pretende repetir o almoço?</p>
+                    <div class="opcoes">
+                        <label><input type="radio" name="repAlmoco" value="sim"> Sim</label>
+                        <label><input type="radio" name="repAlmoco" value="nao"> Não</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pergunta">
+                <h3>🥪 Lanche da tarde</h3>
+                <p>Você vai comer o lanche da tarde?</p>
+                <div class="opcoes">
+                    <label><input type="radio" name="lanche" value="sim"> Sim, vou comer</label>
+                    <label><input type="radio" name="lanche" value="nao"> Não vou comer</label>
+                </div>
+
+                <div class="repetir">
+                    <p>Você pretende repetir o lanche?</p>
+                    <div class="opcoes">
+                        <label><input type="radio" name="repLanche" value="sim"> Sim</label>
+                        <label><input type="radio" name="repLanche" value="nao"> Não</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="botao principal salvar" onclick="salvarResposta()">
+            ✅ Enviar minhas respostas
+        </button>
+        <p id="mensagemAluno" class="mensagem"></p>
+    </section>
+
+    <!-- PAINEL DA COZINHA -->
+    <section id="areaCozinha" hidden>
+        <div class="boas-vindas">
+            <div>
+                <h2>👩‍🍳 Painel da cozinha</h2>
+                <p>Controle de merenda e quantidade de alunos.</p>
+            </div>
+            <div class="data" id="dataCozinha"></div>
+        </div>
+
+        <div class="titulo-secao">
+            <h2>📊 Resumo de hoje</h2>
+            <p>Veja quantos alunos vão comer e quantos pretendem repetir.</p>
+        </div>
+
+        <div class="painel-numeros">
+            <div class="numero-card azul">
+                <span>☕</span>
+                <p>Café da manhã</p>
+                <h2 id="totalCafe">0</h2>
+                <small>alunos</small>
+            </div>
+            <div class="numero-card verde">
+                <span>🍛</span>
+                <p>Almoço</p>
+                <h2 id="totalAlmoco">0</h2>
+                <small>alunos</small>
+            </div>
+            <div class="numero-card laranja">
+                <span>🥪</span>
+                <p>Lanche da tarde</p>
+                <h2 id="totalLanche">0</h2>
+                <small>alunos</small>
+            </div>
+            <div class="numero-card roxo">
+                <span>🔁</span>
+                <p>Repetições</p>
+                <h2 id="totalRepeticoes">0</h2>
+                <small>alunos</small>
+            </div>
+        </div>
+
+        <div class="titulo-secao">
+            <h2>📚 Quantidade por turma</h2>
+        </div>
+
+        <div class="tabela-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Turma</th>
+                        <th>Café</th>
+                        <th>Almoço</th>
+                        <th>Repete almoço</th>
+                        <th>Lanche</th>
+                        <th>Repete lanche</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaTurmas"></tbody>
+            </table>
+        </div>
+
+        <div class="titulo-secao">
+            <h2>🍽️ Editar cardápio</h2>
+            <p>Atualize as refeições que serão servidas.</p>
+        </div>
+
+        <div class="editar-cardapio">
+            <label>Café da manhã</label>
+            <textarea id="editarCafe">Café com leite e pão com doce</textarea>
+
+            <label>Almoço</label>
+            <textarea id="editarAlmoco">Arroz, feijão, frango e saladas</textarea>
+
+            <label>Lanche da tarde</label>
+            <textarea id="editarLanche">Pão com suco</textarea>
+
+            <button class="botao principal" onclick="atualizarCardapio()">
+                💾 Salvar cardápio
+            </button>
+        </div>
+
+        <div class="titulo-secao">
+            <h2>👥 Respostas dos alunos</h2>
+        </div>
+
+        <div class="tabela-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aluno</th>
+                        <th>Turma</th>
+                        <th>Café</th>
+                        <th>Almoço</th>
+                        <th>Repete</th>
+                        <th>Lanche</th>
+                        <th>Repete</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaAlunos"></tbody>
+            </table>
+        </div>
+
+        <button class="botao secundario" onclick="exportarCSV()">
+            📥 Baixar relatório Excel (CSV)
+        </button>
+    </section>
+
+</main>
+
+<footer>
+    <p>🍎 Merenda Escolar · Sistema Educar</p>
+    <small>Alimentando sonhos e cuidando de todos! 💚</small>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
